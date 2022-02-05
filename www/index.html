@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>Freaking Math</title>
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="header">
+      <div class="score"></div>
+    </div>
+
+    <div class="nametitle">
+      <p>Freaking Math</p>
+    </div>
+    <div class="mainstart">
+      <div>
+        <input type="button" class="btn-start" value="Start" />
+        <input type="button" id="btn-rate" class="btn-rate" value="Rate" />
+      </div>
+    </div>
+    <div id="maingame">
+      <div class="line"></div>
+      <div id="main">
+        <div>
+          <div class="gover">
+            <h2>Game Over</h2>
+            <p>
+              Your score:
+              <span class="score">0</span>
+            </p>
+            <p>
+              Best score:
+              <span class="highscore">0</span>
+            </p>
+            <div class="btn-group">
+              <div class="replay">
+                <i class="fas fa-redo-alt"></i>
+              </div>
+              <div class="returnmainmenu">
+                <i class="fas fa-bars"></i>
+              </div>
+            </div>
+          </div>
+          <div class="displaynumber">
+            <span id="number_1"></span><span>+</span><span id="number_2"></span><span>=</span><span></span><span
+              id="result"></span>
+          </div>
+        </div>
+      </div>
+      <div id="answer">
+        <div class="true">
+          <span><i class="fas fa-check"></i></span>
+        </div>
+        <div class="false">
+          <span><i class="fas fa-times"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="cordova.js"></script>
+  <script src="./js/all.min.js"></script>
+  <script src="./js/magic.js"></script>
+</body>
+
+</html>

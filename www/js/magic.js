@@ -28,12 +28,7 @@ getClass("highscore")[0].innerText = highscore;
 getId("btn-start").onclick = playgame;
 getClass("true")[0].onclick = answer_true;
 getClass("false")[0].onclick = answer_false;
-getClass("replay")[0].onclick = function () {
-  setTimeout(playgame, 300);
-};
-getClass("returnmainmenu")[0].onclick = function () {
-  location.reload();
-};
+
 
 function playgame() {
   playg = 1;
@@ -135,6 +130,13 @@ function checkclick() {
     savehighscore();
   }
 }
+
+getClass("replay")[0].onclick = function () {
+  setTimeout(playgame, 300);
+};
+getClass("returnmainmenu")[0].onclick = function () {
+  location.reload();
+};
 
 function savehighscore() {
   if (score > highscore) {

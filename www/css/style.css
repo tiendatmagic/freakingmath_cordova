@@ -139,17 +139,11 @@ html {
 .btn-group .replay {
   color: #ff3bff;
 }
-.btn-group .replay:active {
-  background-color: #ff3bff;
-  color: #fff;
-}
+
 .btn-group .returnmainmenu {
   color: #0099ff;
 }
-.btn-group .returnmainmenu:active {
-  background-color: #0099ff;
-  color: #fff;
-}
+
 .line {
   position: absolute;
   top: 0px;

@@ -39,7 +39,6 @@ getClass("replay")[0].onclick = function () {
   setTimeout(playgame, 300);
 };
 getClass("returnmainmenu")[0].onclick = function () {
-
   location.reload();
 };
 
@@ -68,47 +67,29 @@ function playgame() {
 function startgame() {
   a = Math.floor(Math.random() * 50);
   b = Math.floor(Math.random() * 50);
-  rd = Math.ceil(Math.random() * 12);
+  rd = Math.ceil(Math.random() * 8);
   switch (rd) {
+    case 1:
     case 2:
+    case 3:
     case 4:
-    case 6:
-    case 8:
-    case 10:
-    case 12:
       c = a + b;
       ques = 1;
       break;
 
-    case 1:
-      c = a + b + 10;
-      ques = 0;
-      break;
-
-    case 11:
-      c = a + b - 10;
-      ques = 0;
-      break;
-    case 3:
+    case 5:
+    case 6:
       c = a + b + Math.ceil(Math.random() * 10);
       ques = 0;
       break;
 
-    case 9:
+    case 7:
+    case 8:
       c = a + b - Math.ceil(Math.random() * 10);
       ques = 0;
       break;
-
-    case 5:
-      c = a + b + Math.ceil(Math.random() * 5);
-      ques = 0;
-      break;
-    case 7:
-      c = a + b - Math.ceil(Math.random() * 5);
-      ques = 0;
-      break;
     default:
-      rd = Math.ceil(Math.random() * 12);
+      rd = Math.ceil(Math.random() * 8);
       break;
   }
   getId("number_1").innerText = a;

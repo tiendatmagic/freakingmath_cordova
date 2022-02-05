@@ -101,13 +101,11 @@ function checktime() {
 function answer_true() {
   answ = 1;
   checkclick();
-  getClass("true")[0].classList.add("active")
 }
 
 function answer_false() {
   answ = 0;
   checkclick();
-  getClass("false")[0].classList.add("active")
 }
 
 function checkclick() {
@@ -145,4 +143,3 @@ function savehighscore() {
     getClass("highscore")[0].innerText = highscore;
   }
 }
-

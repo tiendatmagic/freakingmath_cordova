@@ -2,7 +2,6 @@ var score = 0;
 var time;
 var runtime;
 var playg = 0;
-var bgcolor = 0;
 var audio_true = new Audio("./sound/true_sound.mp3");
 var audio_false = new Audio("./sound/false_sound.mp3");
 var highscore = JSON.parse(localStorage.getItem("highscore"));
@@ -25,11 +24,10 @@ function getTagName(tagname) {
     return document.getElementsByTagName(tagname);
   }
 }
-
-
 getClass("highscore")[0].innerText = highscore;
 document.getElementsByClassName("btn-start")[0].addEventListener("click", playgame);
 document.getElementById("btn-rate").addEventListener("click", rategame);
+
 function rategame() {
   cordova.plugins.market.open('com.tiendatmagic.freakingmath');
 }
@@ -56,13 +54,8 @@ function playgame() {
   checktime();
   try {
     startgame();
-  } catch (error) {
-
-  }
+  } catch (error) { }
 }
-
-
-
 
 function startgame() {
   a = Math.floor(Math.random() * 50);
@@ -76,13 +69,11 @@ function startgame() {
       c = a + b;
       ques = 1;
       break;
-
     case 5:
     case 6:
       c = a + b + Math.ceil(Math.random() * 10);
       ques = 0;
       break;
-
     case 7:
     case 8:
       c = a + b - Math.ceil(Math.random() * 10);
@@ -112,8 +103,8 @@ function checktime() {
       getClass("displaynumber")[0].style.display = "none";
       getClass("score")[1].innerText = score;
     }
-    rtimee = (time) / 30;
-    getClass("line")[0].style.width = rtimee + "%";
+    rtime = (time) / 30;
+    getClass("line")[0].style.width = rtime + "%";
   }, 1);
 }
 
@@ -121,14 +112,12 @@ function answer_true() {
   answ = 1;
   checkclick();
   getClass("true")[0].classList.add("active")
-
 }
 
 function answer_false() {
   answ = 0;
   checkclick();
   getClass("false")[0].classList.add("active")
-
 }
 
 function checkclick() {

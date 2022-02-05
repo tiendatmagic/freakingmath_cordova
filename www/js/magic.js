@@ -25,12 +25,7 @@ function getTagName(tagname) {
   }
 }
 getClass("highscore")[0].innerText = highscore;
-document.getElementsByClassName("btn-start")[0].addEventListener("click", playgame);
-document.getElementById("btn-rate").addEventListener("click", rategame);
-
-function rategame() {
-  cordova.plugins.market.open('com.tiendatmagic.freakingmath');
-}
+getId("btn-start").onclick = playgame;
 getClass("true")[0].onclick = answer_true;
 getClass("false")[0].onclick = answer_false;
 getClass("replay")[0].onclick = function () {
@@ -148,3 +143,4 @@ function savehighscore() {
     getClass("highscore")[0].innerText = highscore;
   }
 }
+

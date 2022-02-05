@@ -65,8 +65,7 @@ html {
   display: block;
   margin: 20px auto;
 }
-#btn-start,
-#btn-rate {
+#btn-start {
   padding: 4vh 5vh;
   background-color: #fff;
   color: #ff00d4;

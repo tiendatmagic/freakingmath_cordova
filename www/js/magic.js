@@ -1,6 +1,6 @@
 var score = 0;
 var time;
-var tim;
+var runtime;
 var playg = 0;
 var bgcolor = 0;
 var audio_true = new Audio("./sound/true_sound.mp3");
@@ -42,56 +42,28 @@ getClass("returnmainmenu")[0].onclick = function () {
 
   location.reload();
 };
-window.addEventListener("keydown", function (event) {
-  if (event.which === 37) {
-    answer_true();
-  } else if (event.which === 39) {
-    answer_false();
-  }
-}, true);
 
 function playgame() {
   playg = 1;
   score = 0;
   time = 3000;
-  clearInterval(tim);
+  clearInterval(runtime);
   getClass("gameover")[0].classList.remove("active");
   getClass("displaynumber")[0].style.display = "block";
   getClass("nametitle")[0].style.display = "none";
   getClass("score")[0].innerText = score;
   getClass("mainstart")[0].style.display = "none";
   getId("maingame").style.display = "block";
-  setcolor();
   checktime();
   try {
     startgame();
   } catch (error) {
-    playgame();
+
   }
 }
 
-function setcolor() {
-  bgcolor = Math.floor(Math.random() * 6);
-  switch (bgcolor) {
-    case 0:
-      getTagName("body")[0].style.backgroundColor = "#c92bc9";
-      break;
-    case 1:
-      getTagName("body")[0].style.backgroundColor = "#5bbdff";
-      break;
-    case 2:
-      getTagName("body")[0].style.backgroundColor = "#24AE5E";
-      break;
-    case 3:
-      getTagName("body")[0].style.backgroundColor = "#800080";
-    case 4:
-      getTagName("body")[0].style.backgroundColor = "#ff189e";
-      break;
-    default:
-      getTagName("body")[0].style.backgroundColor = "#FF6633";
-      break;
-  }
-}
+
+
 
 function startgame() {
   a = Math.floor(Math.random() * 50);
@@ -145,7 +117,7 @@ function startgame() {
 }
 
 function checktime() {
-  var tim = setInterval(function () {
+  var runtime = setInterval(function () {
     time -= 8;
     if (time <= 0) {
       time = 0;
@@ -153,7 +125,7 @@ function checktime() {
     if (time === 0) {
       playg = 0;
       audio_false.play();
-      clearInterval(tim);
+      clearInterval(runtime);
       getClass("score")[0].innerText = score;
       getClass("gameover")[0].classList.add("active");
       getClass("displaynumber")[0].style.display = "none";

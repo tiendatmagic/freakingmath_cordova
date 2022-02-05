@@ -26,14 +26,15 @@ function getTagName(tagname) {
   }
 }
 
+
 getClass("highscore")[0].innerText = highscore;
 document.getElementsByClassName("btn-start")[0].addEventListener("click", playgame);
 document.getElementById("btn-rate").addEventListener("click", rategame);
 function rategame() {
   cordova.plugins.market.open('com.tiendatmagic.freakingmath');
 }
-getClass("true")[0].onclick = truee;
-getClass("false")[0].onclick = falsee;
+getClass("true")[0].onclick = answer_true;
+getClass("false")[0].onclick = answer_false;
 getClass("replay")[0].onclick = function () {
   setTimeout(playgame, 300);
 };
@@ -43,9 +44,9 @@ getClass("returnmainmenu")[0].onclick = function () {
 };
 window.addEventListener("keydown", function (event) {
   if (event.which === 37) {
-    truee();
+    answer_true();
   } else if (event.which === 39) {
-    falsee();
+    answer_false();
   }
 }, true);
 
@@ -54,7 +55,7 @@ function playgame() {
   score = 0;
   time = 3000;
   clearInterval(tim);
-  getClass("gover")[0].classList.remove("active");
+  getClass("gameover")[0].classList.remove("active");
   getClass("displaynumber")[0].style.display = "block";
   getClass("nametitle")[0].style.display = "none";
   getClass("score")[0].innerText = score;
@@ -154,7 +155,7 @@ function checktime() {
       audio_false.play();
       clearInterval(tim);
       getClass("score")[0].innerText = score;
-      getClass("gover")[0].classList.add("active");
+      getClass("gameover")[0].classList.add("active");
       getClass("displaynumber")[0].style.display = "none";
       getClass("score")[1].innerText = score;
     }
@@ -163,22 +164,18 @@ function checktime() {
   }, 1);
 }
 
-function truee() {
+function answer_true() {
   answ = 1;
   checkclick();
   getClass("true")[0].classList.add("active")
-  setTimeout(function () {
-    getClass("true")[0].classList.remove("active")
-  }, 100)
+
 }
 
-function falsee() {
+function answer_false() {
   answ = 0;
   checkclick();
   getClass("false")[0].classList.add("active")
-  setTimeout(function () {
-    getClass("false")[0].classList.remove("active")
-  }, 100)
+
 }
 
 function checkclick() {
@@ -193,7 +190,7 @@ function checkclick() {
       playg = 0;
       audio_false.play();
       getClass("score")[0].innerText = score;
-      getClass("gover")[0].classList.add("active");
+      getClass("gameover")[0].classList.add("active");
       getClass("displaynumber")[0].style.display = "none";
       time = 0;
     }
@@ -209,4 +206,3 @@ function savehighscore() {
     getClass("highscore")[0].innerText = highscore;
   }
 }
-

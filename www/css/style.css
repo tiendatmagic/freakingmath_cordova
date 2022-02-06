@@ -61,7 +61,7 @@ html {
   justify-content: center;
   align-items: center;
 }
-.mainstart input {
+.mainstart button {
   display: block;
   margin: 20px auto;
 }
